@@ -30,7 +30,7 @@ export type TAppStore = InstanceType<typeof AppStore>;
 export type SignalState<State extends object> = DeepSignal<State>;
 
 export const AppStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withState(initialState),
   withDevtools('layout-editor'),
   withCommonFeature(),
